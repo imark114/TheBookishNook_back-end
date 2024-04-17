@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-$r8s&-q#=*dc5_+#b63k0y-pasu52%uezcb2&(1an0-sav%nqb
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ['https://thebookishnook.onrender.com','https://*.127.0.0.1']
 
 # Application definition
 
