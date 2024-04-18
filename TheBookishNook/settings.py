@@ -34,6 +34,7 @@ CSRF_TRUSTED_ORIGINS = ['https://thebookishnook.onrender.com','https://*.127.0.0
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders',
     'accounts',
     'book',
     'borrow_book',
@@ -81,9 +81,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'TheBookishNook.wsgi.application'
 
 
-CORS_ALLOWED_ORIGINS =[
-    'http://localhost:5500',
-]
+# CORS_ALLOWED_ORIGINS =[
+#     'http://localhost:5500',
+# ]
+CORS_ALLOW_ALL_ORIGINS=True
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
