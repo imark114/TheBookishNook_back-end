@@ -1,9 +1,10 @@
 asgiref
-beautifulsoup4     
-crispy-bootstrap5  
+beautifulsoup4
+crispy-bootstrap5
 distlib
 Django
 django-bootstrap-v5
+django-cors-headers
 django-crispy-forms
 django-environ
 django-filter
