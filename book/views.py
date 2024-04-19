@@ -3,6 +3,8 @@ from rest_framework import viewsets
 from .models import Book, Category, Review, Wishlist
 from .serializers import BookSerilizer, CategorySerializer, ReviewSerializer, WishlistSerializer
 
+
+
 # Create your views here.
 
 class BookViewSet(viewsets.ModelViewSet):

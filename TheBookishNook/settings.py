@@ -81,6 +81,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'TheBookishNook.wsgi.application'
 
 
+
 # CORS_ALLOWED_ORIGINS =[
 #     'http://localhost:5500',
 # ]
