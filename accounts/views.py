@@ -10,7 +10,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.contrib.auth import authenticate,login, logout
 from .models import Coustomer
 from django.contrib.auth.models import User
-from .serializer import CustomerSerializer, RegistrationSerializer,LoginSerializer
+from .serializer import CustomerSerializer, RegistrationSerializer,LoginSerializer, UserSerializer
 from rest_framework.authtoken.models import Token
 
 # Create your views here.
@@ -18,6 +18,9 @@ from rest_framework.authtoken.models import Token
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Coustomer.objects.all()
     serializer_class = CustomerSerializer
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 class RegistretionViewSet(APIView):
     serializer_class = RegistrationSerializer
