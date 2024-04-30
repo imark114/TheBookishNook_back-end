@@ -43,9 +43,9 @@ class Review(models.Model):
         return f"Coustomer:{self.reviwer.username} Book: {self.book.title}"
 
 class Wishlist(models.Model):
-    coustomer = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     books = models.ManyToManyField(Book)
 
     def __str__(self):
-        return f"buyer: {self.coustomer.username}:"
+        return f"buyer: {self.user.username}:"
     
