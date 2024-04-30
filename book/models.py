@@ -47,5 +47,5 @@ class Wishlist(models.Model):
     books = models.ManyToManyField(Book)
 
     def __str__(self):
-        return f"buyer: {self.coustomer.user.username}:"
+        return f"buyer: {self.coustomer.username}:"
     
