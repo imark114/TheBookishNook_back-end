@@ -12,7 +12,7 @@ from .models import Coustomer
 from django.contrib.auth.models import User
 from .serializer import CustomerSerializer, RegistrationSerializer,LoginSerializer, UserSerializer
 from rest_framework.authtoken.models import Token
-
+from rest_framework import status 
 # Create your views here.
 
 class CustomerViewSet(viewsets.ModelViewSet):
@@ -72,6 +72,12 @@ class LoginViewSet(APIView):
 
 class LogoutApiView(APIView):
     def get(self, request):
-        request.user.auth_token.delete()
-        logout(request)
-        return redirect('login')
+        try:
+            request.user.auth_token.delete()
+            logout(request)
+            return Response({'message': 'Logout successful'}, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            print(f"Error during logout: {e}") 
+            return Response({'message': 'Logout failed'}, status=status.HTTP_400_BAD_REQUEST)
+
