@@ -52,7 +52,7 @@ def activate(request,uid64,token):
         user.save()
         return redirect('https://precious-llama-5a48dd.netlify.app/login')
     else:
-        return redirect('register')
+        return redirect('https://precious-llama-5a48dd.netlify.app/registration')
 
 class LoginViewSet(APIView):
     def post(self, request):
@@ -70,14 +70,8 @@ class LoginViewSet(APIView):
         
         return Response(serializer.errors)
 
-class LogoutApiView(APIView):
-    def get(self, request):
-        try:
-            request.user.auth_token.delete()
-            logout(request)
-            return Response({'message': 'Logout successful'}, status=status.HTTP_200_OK)
-        
-        except Exception as e:
-            print(f"Error during logout: {e}") 
-            return Response({'message': 'Logout failed'}, status=status.HTTP_400_BAD_REQUEST)
 
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')

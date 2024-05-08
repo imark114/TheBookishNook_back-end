@@ -11,5 +11,5 @@ urlpatterns = [
     path('register/', views.RegistretionViewSet.as_view(), name='register'),
     path('active/<uid64>/<token>/', views.activate, name='activate'),
     path('login/', views.LoginViewSet.as_view(), name='login'),
-    path('logout/', views.LogoutApiView.as_view(),name='logout'),
+    path('logout/', views.logout_view,name='logout'),
 ]
