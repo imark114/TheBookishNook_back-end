@@ -9,4 +9,4 @@ class BorrowingAdmin(admin.ModelAdmin):
         return obj.book.title
     
     def username(self, obj):
-        return obj.coustomer.user.username
+        return obj.coustomer.username
